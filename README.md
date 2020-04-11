@@ -1,2 +1,7 @@
-# MedicHub - global platform for rapid medical devices manufacturing
-# MedicHub connects hospitals with manufacturing facilities to enable fast and validated medical devices fabrication
+# MedicHub
+Global platform for rapid medical devices manufacturing. Connects hospitals with manufacturing facilities to enable fast and validated medical devices fabrication
+
+## How it works?
+a
+
+### Devices available
