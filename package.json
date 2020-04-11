@@ -37,7 +37,7 @@
     "jss-nested": "1.0.1",
     "jss-px": "1.0.0",
     "jss-vendor-prefixer": "1.0.1",
-    "lodash": "4.0.0",
+    "lodash": ">=4.17.12",
     "node-libs-browser": "1.0.0",
     "promise": "7.1.1",
     "react": "0.14.6",
@@ -69,7 +69,7 @@
     "babel-runtime": "6.3.19",
     "clean-webpack-plugin": "0.1.6",
     "coveralls": "2.11.6",
-    "eslint": "1.10.3",
+    "eslint": ">=4.18.2",
     "eslint-loader": "1.2.0",
     "eslint-plugin-babel": "3.0.0",
     "eslint-plugin-react": "3.16.0",
@@ -81,7 +81,7 @@
     "mkdirp": "0.5.1",
     "react-transform-hmr": "1.0.1",
     "string-replace-webpack-plugin": "0.0.3",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": ">=3.1.11"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
