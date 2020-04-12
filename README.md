@@ -1,4 +1,4 @@
-# MedicHub
+# AirLabs
 Global platform for rapid medical device manufacturing. Connecting hospitals with manufacturing partners in LATAM to enable fast and reliable medical devices fabrication.
 
 ## Why?
