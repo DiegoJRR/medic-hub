@@ -10,6 +10,7 @@ import {
     Redirect
   } from "react-router-dom";
   import './App.css';
+  import ThreeCanvas from './ThreeCanvas';
 
 
 class FileDisplay extends Component {
@@ -53,29 +54,48 @@ class FileDisplay extends Component {
                         <div className='row'>
                             <div className='col-4'>
                                 <div className='view-container'>
-                                    <img className='display-img' src={this.state.file.imageUrl}></img>
+                                    <ThreeCanvas modelUrl={this.state.file.modelUrl}></ThreeCanvas>
                                 </div>
                             </div>
                             <div className='col'>
                                 <div className='row specs-container'>
                                     <div className='specs-detail-view content'>
+                                        <iframe id="my_iframe" hidden></iframe>
                                         <p>{this.state.file.description}</p>
                                         <br></br>
                                         <p>Specifications:</p>
                                         <ul>
                                             {this.state.file.specs.map((spec) => <li>{spec}</li>)}
-                                            {/* <li>Field</li>
-                                            <li>Field</li>
-                                            <li>Field</li> */}
                                         </ul>
+                                        {/* <button className='button is-light' onClick={() => {
+                                            document.getElementById('my_iframe').src = './models/MaskStringRelieverV7.STL';
+                                        }}>
+                                        Download file
+                                        </button> */}
                                     </div>
                                 </div>
-                                <div className='row'>
+                                <div className='row bottom-bar '>
                                     <div className='float-l'>
                                         <Link to={{pathname : '/MakerList', state : {product: this.state.file}}}>
-                                                <button className='level-item button is-white'>Explore Providers</button>
+                                                <button className='level-item button is-light'>Explore Providers</button>
                                         </Link>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div className='row'>
+                            <div className='col'>
+                                <div className='row'>
+                                <h3 className='title is-3'>Gallery</h3>
+                            <hr></hr>
+                                </div>
+                                <div className='row'>
+                                    {this.state.file.gallery.map((item) => 
+                                        <div className='col-3'>
+                                            <img src={item} className='gallery-item'></img>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
