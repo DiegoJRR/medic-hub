@@ -1,8 +1,8 @@
 # MedicHub
-Global platform for rapid medical devices manufacturing. Connecting hospitals with manufacturing facilities to enable fast and validated medical devices fabrication.
+Global platform for rapid medical device manufacturing. Connecting hospitals with manufacturing partners to enable fast and reliable medical devices fabrication.
 
 ## Why?
-The medical device industry demands rapid prototyping and deployment. We are seeing it now with the COVID-19 pandemic, and we are going to see it after it. By leveraging rapid prototyping/manufacturing, hospitals and biomedical scientists will be able to test and use a diverse set of medical devices.
+The medical device industry demands rapid prototyping and deployment. We are seeing it now with the COVID-19 pandemic, and we are going to see it after it. By leveraging rapid prototyping/manufacturing, hospitals and biomedical engineers will be able to test and use a diverse set of medical devices.
 
 ## How it works?
 1. Do you want a customzied valve for your Medtronic ventilator? Find it in the platform.
