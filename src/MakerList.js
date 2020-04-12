@@ -17,12 +17,14 @@ class MakerView extends Component {
         super(props);
         this.state = {
             used : false,
-            data : null
+            data : null,
+            product : null
         }
     }
 
-    setData(data) {
+    setData(data, prod) {
         this.setState({
+            product : prod,
             data: data,
             used: true
         })
@@ -34,6 +36,7 @@ class MakerView extends Component {
                 <div className='maker-view'></div>
             )
         }
+        
         return (
             <div className='maker-view'>
                 <div className='maker-name'>
@@ -53,7 +56,9 @@ class MakerView extends Component {
                     {this.state.data.cost}
                 </div>
                 <div className='bottom-bar'>
-                    <button className='button float-l is-white'>Request</button>
+                    <Link to={{pathname : '/Checkout', state : {data: this.state.data, product: this.state.product}}}>
+                        <button className='button float-l is-white'>Request</button>
+                    </Link>
                 </div>
             </div>
         );
@@ -83,6 +88,7 @@ class MakerList extends Component {
         this.makerView = React.createRef();
         this.updateMakerView = this.updateMakerView.bind(this);
         this.state = {
+            product : null,
             makers : [
                 {
                     name : 'Maker1',
@@ -107,9 +113,14 @@ class MakerList extends Component {
         }
     }
 
+    componentDidMount() {
+        this.setState({
+            product : this.props.location.state.product,
+        });
+    }
+
     updateMakerView(data) {
-        console.log(this.makerView);
-        this.makerView.current.setData(data);
+        this.makerView.current.setData(data, this.state.product);
     }
 
     render() {

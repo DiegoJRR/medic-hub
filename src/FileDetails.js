@@ -18,21 +18,23 @@ class FileDisplay extends Component {
         this.state = {
             imageUrl : '',
             itemName : '',
+            description : 'description',
             redirected : null
         }
         // this.detailView = React.createRef();
         // this.solicitudeView = React.createRef();
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.setState({
             imageUrl : this.props.location.state.imageUrl,
-            itemName : this.props.location.state.itemName
+            itemName : this.props.location.state.itemName,
+            description : this.props.location.state.description,
+            specs : this.props.location.state.specs
         });
     }
 
     render() {
-        
         if (this.state.redirected) {
             return this.state.redirected;
         }
@@ -56,15 +58,15 @@ class FileDisplay extends Component {
                             </div>
                             <div className="tile is-parent is-vertical">
                                 <div className='tile is-child specs-container'>
-                                    <div  className='specs-detail-view'>
-                                        <p>Description</p>
+                                    <div  className='specs-detail-view content'>
+                                        <p>{this.state.description}</p>
                                         <br></br>
-                                        <p>FDA/NIH Approved: No</p> 
-                                        <p>Allowed materials</p>
+                                        <p>Specifications:</p>
                                         <ul>
+                                            {this.state.specs.map((spec) => <li>{spec}</li>)}
+                                            {/* <li>Field</li>
                                             <li>Field</li>
-                                            <li>Field</li>
-                                            <li>Field</li>
+                                            <li>Field</li> */}
                                         </ul>
                                     </div>
                                     <div  className='specs-solicitude-view' hidden>
@@ -73,9 +75,8 @@ class FileDisplay extends Component {
                                 </div>
                                 <div className='tile is-child is-12 level'>
                                     <div className='float-l'>
-                                        <Link to={{pathname : '/MakerList',
-                                                state : {name: this.state.itemName}}}>
-                                                <button className='level-item button is-white' onClick={() => {}}>Explore Providers</button>
+                                        <Link to={{pathname : '/MakerList', state : {product: this.state}}}>
+                                                <button className='level-item button is-white'>Explore Providers</button>
                                         </Link>
                                     </div>
                                 </div>

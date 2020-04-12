@@ -47,7 +47,9 @@ body {
 .file-display {
   margin: 1rem;
 }
-
+.file-display .card {
+  max-width: 175px;
+}
 .file-display .card .card-image .image img {
   width: 175px !important;
 }
@@ -113,7 +115,7 @@ body {
   height: 100%;
 }
 .header {
-  padding: 1rem;
+  padding: 1rem 0;
   padding-bottom: 0;
   margin: 0;
 }
@@ -153,4 +155,8 @@ body {
 }
 .fs-2 {
   font-size: 2rem !important;
+}
+
+.am-in {
+  width: 10ch;
 }

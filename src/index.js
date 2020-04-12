@@ -9,6 +9,7 @@ import FileDetails from './FileDetails';
 import { createBrowserHistory } from "history";
 import Catalogue from './Catalogue';
 import MakerList from './MakerList';
+import Checkout from './Checkout';
 
 const history = createBrowserHistory();
 
@@ -23,6 +24,7 @@ function SwitchHandler() {
 			{/* <Route path="/gallery" children={<Catalogue />} /> */}
 			<Route path="/FileDetails" component={FileDetails} />
 			<Route path="/MakerList" component={MakerList} />
+			<Route path="/Checkout" component={Checkout} />
 		</Switch>
 	);
 }
