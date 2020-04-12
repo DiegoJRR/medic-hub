@@ -29,22 +29,16 @@ class FileDisplay extends Component {
                 <div className='file-display'>
                     <Link to={{
                                     pathname : '/FileDetails',
-                                    state : this.props
+                                    state : this.props.file
                                 }}>
-                    <div className='card' onClick={() => {
-                            console.log('PTM');
-                            {/* this.setState({redirected : <Redirect push to={{
-                                    pathname : '/FileDetails',
-                                    state : this.props
-                                }}/>}); */}
-                        }}>
+                    <div className='card'>
                         <div className='card-image'>
                             <figure className='image'>
-                                <img src={this.props.imageUrl} className='catalogue-image'></img>
+                                <img src={this.props.file.imageUrl} className='catalogue-image'></img>
                             </figure>
                         </div>
                         <div className='card-content'>
-                        <Link to='/FileDetails'>{this.props.itemName}</Link>
+                            {this.props.file.itemName}
                         </div>
                     </div>
                     </Link>

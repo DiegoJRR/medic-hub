@@ -10,6 +10,7 @@ import {
     Redirect
   } from "react-router-dom";
   import './App.css';
+  import ThreeCanvas from './ThreeCanvas';
 
 
 class FileDisplay extends Component {
@@ -18,71 +19,86 @@ class FileDisplay extends Component {
         this.state = {
             imageUrl : '',
             itemName : '',
+            description : 'description',
             redirected : null
         }
         // this.detailView = React.createRef();
         // this.solicitudeView = React.createRef();
     }
 
-    componentDidMount() {
+    componentWillMount() {
+        console.log('->', this.props.location.state)
         this.setState({
-            imageUrl : this.props.location.state.imageUrl,
-            itemName : this.props.location.state.itemName
+            file : this.props.location.state,
+            // imageUrl : this.props.location.state.imageUrl,
+            // itemName : this.props.location.state.itemName,
+            // description : this.props.location.state.description,
+            // specs : this.props.location.state.specs,
+            // gallery : this.props.location.state.gallery
         });
     }
 
     render() {
-        
         if (this.state.redirected) {
             return this.state.redirected;
         }
         return (
             <div className='file-details section'>
-               <div className="tile is-ancestor">
-                <div className='tile is-parent is-vertical is-12'>
-                    <div className='tile is-vertical is-12'>
-                        <div className='title is-parent is-12'>
-                            <div className='tile is-child is-12'>
-                                <h2 className='title'>{this.state.itemName}</h2> 
-                                <hr></hr>
-                            </div>
+                <div className='container-fluid'>
+                    <div className='col'>
+                        <div className='row'>
+                            <h2 className='title'>{this.state.file.itemName}</h2> 
+                            
                         </div>
-                    </div>
-                    <div className="tile">
-                        <div className="tile is-12">
-                        <div className="tile is-parent">
-                            <div className="tile is-4 is-child notification is-primary view-container">
-                                <img className='display-img' src={this.state.imageUrl}></img>
+                        <hr></hr>
+                        <div className='row'>
+                            <div className='col-4'>
+                                <div className='view-container'>
+                                    <ThreeCanvas modelUrl={this.state.file.modelUrl}></ThreeCanvas>
+                                </div>
                             </div>
-                            <div className="tile is-parent is-vertical">
-                                <div className='tile is-child specs-container'>
-                                    <div  className='specs-detail-view'>
-                                        <p>Description</p>
+                            <div className='col'>
+                                <div className='row specs-container'>
+                                    <div className='specs-detail-view content'>
+                                        <iframe id="my_iframe" hidden></iframe>
+                                        <p>{this.state.file.description}</p>
                                         <br></br>
-                                        <p>FDA/NIH Approved: No</p> 
-                                        <p>Allowed materials</p>
+                                        <p>Specifications:</p>
                                         <ul>
-                                            <li>Field</li>
-                                            <li>Field</li>
-                                            <li>Field</li>
+                                            {this.state.file.specs.map((spec) => <li>{spec}</li>)}
                                         </ul>
-                                    </div>
-                                    <div  className='specs-solicitude-view' hidden>
-                                        Solicitar
+                                        {/* <button className='button is-light' onClick={() => {
+                                            document.getElementById('my_iframe').src = './models/MaskStringRelieverV7.STL';
+                                        }}>
+                                        Download file
+                                        </button> */}
                                     </div>
                                 </div>
-                                <div className='tile is-child is-12 level'>
+                                <div className='row bottom-bar '>
                                     <div className='float-l'>
-                                        <Link to={{pathname : '/MakerList',
-                                                state : {name: this.state.itemName}}}>
-                                                <button className='level-item button is-white' onClick={() => {}}>Explore Providers</button>
+                                        <Link to={{pathname : '/MakerList', state : {product: this.state.file}}}>
+                                                <button className='level-item button is-light'>Explore Providers</button>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
+                        <br></br>
+                        <div className='row'>
+                            <div className='col'>
+                                <div className='row'>
+                                <h3 className='title is-3'>Gallery</h3>
+                            <hr></hr>
+                                </div>
+                                <div className='row'>
+                                    {this.state.file.gallery.map((item) => 
+                                        <div className='col-3'>
+                                            <img src={item} className='gallery-item'></img>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

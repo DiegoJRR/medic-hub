@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  /* overflow: hidden; */
 }
 
 #root {
@@ -20,14 +20,19 @@ body {
   z-index: -1;
 }
 
+.section {
+  padding: 1rem;
+}
 
-.catalogue {
-  height: calc(100vh);
+.card-cont {
+  /* height: calc(100vh); */
   overflow: scroll;
   display: flex;
   flex-direction: row;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   flex-wrap: wrap;
+  margin-top: 5rem; 
+  margin-bottom: 5rem;
   /* padding: 2rem; */
 }
 
@@ -36,20 +41,24 @@ body {
 }
 
 .main-nav {
-  background-color: cadetblue;
-  padding-left: 1rem;
+  background-color: #ff864f;
+  /* padding-left: 1rem;
   position: fixed;
   width: 100vw;
   top: 0;
-  z-index: 100 !important;
+  z-index: 100 !important; */
 }
 
 .file-display {
   margin: 1rem;
 }
-
+.file-display .card {
+  max-width: 175px;
+}
 .file-display .card .card-image .image img {
-  width: 175px !important;
+  /* width: 175px !important; */
+  height: 150px;
+  object-fit: cover;
 }
 
 .modal-content {
@@ -58,20 +67,22 @@ body {
 
 .view-container {
   padding: 0;
+  /* width: 100px;
+  height: 100px; */
   /* height: 100%; */
   /* width: 50vw; */
 }
 
 .specs-container {
-  padding: 0 3rem;
+  /* padding: 0 3rem; */
 
 }
 
 .file-details {
   box-sizing: border-box;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   padding-bottom: 1rem;
-  height: calc(100% - 50px);
+  /* height: calc(100% - 50px); */
 }
 
 .is-ancestor {
@@ -79,7 +90,7 @@ body {
 }
 
 .file-details {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* height: 100%; */
 }
 
@@ -103,17 +114,17 @@ body {
 }
 
 .maker-list {
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
   padding-bottom: 0;
   margin-bottom: 0;
-  height: calc(100% - 50px);
+  /* height: calc(100% - 50px); */
 }
 
 .maker-show {
   height: 100%;
 }
 .header {
-  padding: 1rem;
+  padding: 1rem 0;
   padding-bottom: 0;
   margin: 0;
 }
@@ -135,13 +146,14 @@ body {
 
 .maker-view {
   height: 100%;
+  padding: 1rem;
 }
 
 .bottom-bar {
   width: 100%;
-  position: absolute;
-  padding: 1rem; 
-  padding-right: 1.5rem;
+  /* position: absolute; */
+  /* padding: 1rem;  */
+  /* padding-right: 1.5rem; */
   bottom: 0;
 }
 
@@ -154,3 +166,28 @@ body {
 .fs-2 {
   font-size: 2rem !important;
 }
+
+.am-in {
+
+  width: 10ch;
+}
+
+.landing {
+  padding: 1rem;
+  /* background-color: #ff864f; */
+  /* color: white !important; */
+}
+
+.landing .title {
+  color: #ff864f;
+}
+.banner {
+  padding: 4rem;
+  margin: 1rem;
+  background-color: #ff864f;
+}
+
+.banner .title {
+  color: white !important;
+}
+

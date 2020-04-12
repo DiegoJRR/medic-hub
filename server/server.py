@@ -1,12 +1,12 @@
 import time
-from flask import Flask
+from flask import Flask, request, jsonify, abort
 import psycopg2
 from config import config
 
 
 app = Flask(__name__)
 
-def connect():
+def queryDB(query):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -16,20 +16,15 @@ def connect():
         # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
-		
+        
         # create a cursor
         cur = conn.cursor()
         
-	# execute a statement
-        print('PostgreSQL database version:')
-        cur.execute('SELECT * FROM Forms')
+        response = cur.execute(query)
 
-        # display the PostgreSQL database server version
-        db_version = cur.fetchone()
-        print(db_version)
-       
-	    # close the communication with the PostgreSQL
-        cur.close()
+        results = cur.fetchall() 
+
+        return results
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
     finally:
@@ -38,8 +33,16 @@ def connect():
             print('Database connection closed.')
             
 
-@app.route('/time')
-def get_current_time():
-    connect()
+@app.route('/MakersList', methods=['GET'])
+def get_makers_list():
 
-    return {'time': time.time()}
+    if request.json:
+        query = "SELECT *, ST_Distance(ST_PointFromText('POINT(-100.316116 25.686613)', 4326), geom) \
+            FROM MAKERS WHERE ID IN  (SELECT DISTINCT MAKER_ID FROM MAKERS_PRINTERS WHERE PRINTER_ID IN \
+                (SELECT PRINTER_ID FROM PRINTERS_MATERIALS WHERE MATERIAL_ID = \
+                    (SELECT MATERIAL_ID FROM MATERIALS WHERE MATERIAL_NAME = 'PLA')));"
+
+        results = queryDB(query)
+        print(results)
+
+        return jsonify(results[0])
