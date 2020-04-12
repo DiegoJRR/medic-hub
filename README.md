@@ -13,10 +13,10 @@ The medical device industry demands rapid prototyping and deployment. We are see
 (GIFs)
 
 ## Devices available
-*Intubation box
-*House clamp for patient intubation
-*Y splitter for ventilator
-*Venturi valve
-*Kiwishield by Prothesia
-*Mask strain relievers
-*Slim shield mask
+* Intubation box
+* House clamp for patient intubation
+* Y splitter for ventilator
+* Venturi valve
+* Kiwishield by Prothesia
+* Mask strain relievers
+* Slim shield mask
