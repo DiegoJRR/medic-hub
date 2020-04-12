@@ -3,6 +3,7 @@ from flask import Flask
 import psycopg2
 from config import config
 
+
 app = Flask(__name__)
 
 def connect():
@@ -40,4 +41,5 @@ def connect():
 @app.route('/time')
 def get_current_time():
     connect()
+
     return {'time': time.time()}
