@@ -20,8 +20,7 @@ function SwitchHandler() {
 
 	return (
 		<Switch location={background || location}>
-			<Route exact path="/" children={<App />} />
-			{/* <Route path="/gallery" children={<Catalogue />} /> */}
+			<Route exact path="/" component={App} />
 			<Route path="/FileDetails" component={FileDetails} />
 			<Route path="/MakerList" component={MakerList} />
 			<Route path="/Checkout" component={Checkout} />
@@ -32,7 +31,7 @@ function SwitchHandler() {
 
 ReactDOM.render(
 	<React.StrictMode>
-		<nav className='navbar main-nav' role='navigation' aria-label='main navigation'>
+		<nav className='navbar sticky-top main-nav' role='navigation' aria-label='main navigation'>
             <div className='navbar-brand level'>
 					<div className='level-item has-text-centered has-text-white'>
 						<h5> MEDIC HUB </h5>

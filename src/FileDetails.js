@@ -26,11 +26,14 @@ class FileDisplay extends Component {
     }
 
     componentWillMount() {
+        console.log('->', this.props.location.state)
         this.setState({
-            imageUrl : this.props.location.state.imageUrl,
-            itemName : this.props.location.state.itemName,
-            description : this.props.location.state.description,
-            specs : this.props.location.state.specs
+            file : this.props.location.state,
+            // imageUrl : this.props.location.state.imageUrl,
+            // itemName : this.props.location.state.itemName,
+            // description : this.props.location.state.description,
+            // specs : this.props.location.state.specs,
+            // gallery : this.props.location.state.gallery
         });
     }
 
@@ -40,50 +43,42 @@ class FileDisplay extends Component {
         }
         return (
             <div className='file-details section'>
-               <div className="tile is-ancestor">
-                <div className='tile is-parent is-vertical is-12'>
-                    <div className='tile is-vertical is-12'>
-                        <div className='title is-parent is-12'>
-                            <div className='tile is-child is-12'>
-                                <h2 className='title'>{this.state.itemName}</h2> 
-                                <hr></hr>
-                            </div>
+                <div className='container-fluid'>
+                    <div className='col'>
+                        <div className='row'>
+                            <h2 className='title'>{this.state.file.itemName}</h2> 
+                            
                         </div>
-                    </div>
-                    <div className="tile">
-                        <div className="tile is-12">
-                        <div className="tile is-parent">
-                            <div className="tile is-4 is-child notification is-primary view-container">
-                                <img className='display-img' src={this.state.imageUrl}></img>
+                        <hr></hr>
+                        <div className='row'>
+                            <div className='col-4'>
+                                <div className='view-container'>
+                                    <img className='display-img' src={this.state.file.imageUrl}></img>
+                                </div>
                             </div>
-                            <div className="tile is-parent is-vertical">
-                                <div className='tile is-child specs-container'>
-                                    <div  className='specs-detail-view content'>
-                                        <p>{this.state.description}</p>
+                            <div className='col'>
+                                <div className='row specs-container'>
+                                    <div className='specs-detail-view content'>
+                                        <p>{this.state.file.description}</p>
                                         <br></br>
                                         <p>Specifications:</p>
                                         <ul>
-                                            {this.state.specs.map((spec) => <li>{spec}</li>)}
+                                            {this.state.file.specs.map((spec) => <li>{spec}</li>)}
                                             {/* <li>Field</li>
                                             <li>Field</li>
                                             <li>Field</li> */}
                                         </ul>
                                     </div>
-                                    <div  className='specs-solicitude-view' hidden>
-                                        Solicitar
-                                    </div>
                                 </div>
-                                <div className='tile is-child is-12 level'>
+                                <div className='row'>
                                     <div className='float-l'>
-                                        <Link to={{pathname : '/MakerList', state : {product: this.state}}}>
+                                        <Link to={{pathname : '/MakerList', state : {product: this.state.file}}}>
                                                 <button className='level-item button is-white'>Explore Providers</button>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
                     </div>
                 </div>
             </div>

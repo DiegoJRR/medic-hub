@@ -21,7 +21,6 @@ class FileDisplay extends Component {
     }
 
     render() {
-        console.log(this.props);
         if (this.state.redirected) {
             return this.state.redirected;
         }
@@ -30,16 +29,16 @@ class FileDisplay extends Component {
                 <div className='file-display'>
                     <Link to={{
                                     pathname : '/FileDetails',
-                                    state : this.props
+                                    state : this.props.file
                                 }}>
                     <div className='card'>
                         <div className='card-image'>
                             <figure className='image'>
-                                <img src={this.props.imageUrl} className='catalogue-image'></img>
+                                <img src={this.props.file.imageUrl} className='catalogue-image'></img>
                             </figure>
                         </div>
                         <div className='card-content'>
-                            {this.props.itemName}
+                            {this.props.file.itemName}
                         </div>
                     </div>
                     </Link>

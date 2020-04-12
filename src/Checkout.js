@@ -60,7 +60,7 @@ class Checkout extends Component {
                     <p>Cost per unit: {this.state.data.cost}</p>
 
                     <p>Amount: </p>
-                    <input ref={this.input} className='input am-in' type='number' name='amount' step='1' onChange={this.updateCost}/>
+                    <input min={0} ref={this.input} className='input am-in' type='number' name='amount' step='1' onChange={this.updateCost}/>
                     <hr></hr>
                     <p>Total: {this.state.cost}</p>
                 </div>

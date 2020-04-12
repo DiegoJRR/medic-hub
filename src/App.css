@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  /* overflow: hidden; */
 }
 
 #root {
@@ -20,9 +20,12 @@ body {
   z-index: -1;
 }
 
+.section {
+  padding: 1rem;
+}
 
 .catalogue {
-  height: calc(100vh);
+  /* height: calc(100vh); */
   overflow: scroll;
   display: flex;
   flex-direction: row;
@@ -37,11 +40,11 @@ body {
 
 .main-nav {
   background-color: cadetblue;
-  padding-left: 1rem;
+  /* padding-left: 1rem;
   position: fixed;
   width: 100vw;
   top: 0;
-  z-index: 100 !important;
+  z-index: 100 !important; */
 }
 
 .file-display {
@@ -65,15 +68,15 @@ body {
 }
 
 .specs-container {
-  padding: 0 3rem;
+  /* padding: 0 3rem; */
 
 }
 
 .file-details {
   box-sizing: border-box;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   padding-bottom: 1rem;
-  height: calc(100% - 50px);
+  /* height: calc(100% - 50px); */
 }
 
 .is-ancestor {
@@ -81,7 +84,7 @@ body {
 }
 
 .file-details {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* height: 100%; */
 }
 
@@ -105,10 +108,10 @@ body {
 }
 
 .maker-list {
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
   padding-bottom: 0;
   margin-bottom: 0;
-  height: calc(100% - 50px);
+  /* height: calc(100% - 50px); */
 }
 
 .maker-show {
