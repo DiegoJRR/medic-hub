@@ -47,22 +47,28 @@ class Checkout extends Component {
     render() {
         return (
             <section className='section checkout'>
-                <div className='header'>
-                    <h2 className='title'>Checkout</h2>
-                    <hr></hr>
-                </div>
-                <div>
-                    <h4 className='title is-4'>Provider:</h4>
-                    <h5 className='title is-5'>{this.state.data.name}</h5>
-                    <h4 className='title is-4'>Product:</h4>
-                    <h5 className='title is-5'>{this.state.product.itemName}</h5>
-                    <p>{this.state.product.description}</p>
-                    <p>Cost per unit: {this.state.data.cost}</p>
+                <div className='section row justify-content-md-center'>
+                    <div className='col-8'>
+                        <div className='header'>
+                            <h2 className='title'>Checkout</h2>
+                            <hr></hr>
+                        </div>
+                        <div>
+                            <h5 className='title is-5'>{this.state.product.itemName}</h5>
+                            <p>{this.state.product.description}</p>
+                            <br></br>
+                            <p>Cost per unit: {this.formatter.format(this.state.data.cost)}</p>
 
-                    <p>Amount: </p>
-                    <input min={0} ref={this.input} className='input am-in' type='number' name='amount' step='1' onChange={this.updateCost}/>
-                    <hr></hr>
-                    <p>Total: {this.state.cost}</p>
+                            <p>Amount: </p>
+                            <input min={0} ref={this.input} className='input am-in' type='number' name='amount' step='1' onChange={this.updateCost}/>
+                            <hr></hr>
+                            <p>Total: {this.state.cost}</p>
+                            <br></br>
+                            <button className='button is-light'>
+                                Proceed
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
         );

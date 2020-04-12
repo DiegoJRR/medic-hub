@@ -33,9 +33,7 @@ ReactDOM.render(
 	<React.StrictMode>
 		<nav className='navbar sticky-top main-nav' role='navigation' aria-label='main navigation'>
             <div className='navbar-brand level'>
-					<div className='level-item has-text-centered has-text-white'>
-						<h5> MEDIC HUB </h5>
-					</div>
+				<img src='./logo.png' height='60' width='60'></img>
             </div>
         </nav>
 	  	<BrowserRouter>
