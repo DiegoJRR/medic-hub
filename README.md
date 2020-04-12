@@ -10,7 +10,6 @@ The medical device industry demands rapid prototyping and deployment. We are see
 3. We match you up with the best manufacturer based on your needs
 4. Your device is delivered to your doorstep
 
-(GIFs)
 
 ## Devices available
 * Intubation box
