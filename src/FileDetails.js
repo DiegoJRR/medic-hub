@@ -59,9 +59,9 @@ class FileDisplay extends Component {
                                     <div  className='specs-detail-view'>
                                         <p>Description</p>
                                         <br></br>
+                                        <p>FDA/NIH Approved: No</p> 
+                                        <p>Allowed materials</p>
                                         <ul>
-                                            <li>Field</li>
-                                            <li>Field</li>
                                             <li>Field</li>
                                             <li>Field</li>
                                             <li>Field</li>

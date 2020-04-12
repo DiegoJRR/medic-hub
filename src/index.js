@@ -29,18 +29,18 @@ function SwitchHandler() {
 
 
 ReactDOM.render(
-  <React.StrictMode>
-  		<nav className='navbar main-nav' role='navigation' aria-label='main navigation'>
+	<React.StrictMode>
+		<nav className='navbar main-nav' role='navigation' aria-label='main navigation'>
             <div className='navbar-brand level'>
 					<div className='level-item has-text-centered has-text-white'>
 						<h5> MEDIC HUB </h5>
 					</div>
             </div>
         </nav>
-	  <BrowserRouter>
-		<SwitchHandler />
-	</BrowserRouter>
-  </React.StrictMode>,
+	  	<BrowserRouter>
+			<SwitchHandler />
+		</BrowserRouter>
+  	</React.StrictMode>,
   document.getElementById('root')
 );
 
