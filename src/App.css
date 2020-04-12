@@ -6,13 +6,40 @@ html {
   font-size: 15px;
 }
 
-.Catalogue {
+body {
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+#root {
+  height: 100%;
+}
+
+.offset {
+  margin-top: 50px;
+  z-index: -1;
+}
+
+
+.catalogue {
+  display: flex;
+  flex-direction: row;
   font-size: 1rem;
+  flex-wrap: wrap;
   /* padding: 2rem; */
+}
+
+.file-display {
+
 }
 
 .main-nav {
   background-color: cadetblue;
+  padding-left: 1rem;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 100 !important;
 }
 
 .file-display {
@@ -28,11 +55,73 @@ html {
 }
 
 .view-container {
-  background-color: red;
-  height: 100%;
-  width: 50vw;
+  padding: 0;
+  /* height: 100%; */
+  /* width: 50vw; */
+}
+
+.specs-container {
+  padding: 0 3rem;
+
 }
 
 .file-details {
-  padding-top: 2rem;
+  box-sizing: border-box;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: calc(100% - 50px);
+}
+
+.is-ancestor {
+  height: 100%;
+}
+
+.file-details .container {
+  /* height: 100%; */
+}
+
+.display-img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.float-l {
+  float: right;
+}
+
+.specs-detail-view {
+  width: 100%;
+  height: 100%;
+}
+
+.specs-solicitude-view {
+  width: 100%;
+  height: 100%;
+}
+
+.maker-list {
+  padding-top: 1.5rem;
+}
+
+.maker-show {
+  position: fixed;
+  top: 50;
+  width: 33%;
+}
+.header {
+  padding: 1rem;
+}
+
+.list-container {
+  padding: 1rem 1rem 1rem 0rem;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.maker-card {
+  padding: 2rem;
 }

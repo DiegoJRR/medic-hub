@@ -5,18 +5,8 @@ import Catalogue from './Catalogue';
 import {Router} from 'react-router-dom';
 
 function App() {
-  // const [currentTime, setCurrentTime] = useState(0);
-
-  // useEffect(() => {
-  //   fetch('/time').then(res => res.json()).then(data => {
-  //     setCurrentTime(data.time);
-  //   });
-  // }, []);
-
-
   return (
-    <div>
-        
+    <div className='main-container'>
 		<Catalogue></Catalogue>
     </div>
     

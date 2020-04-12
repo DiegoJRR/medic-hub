@@ -8,25 +8,22 @@ import FileDetails from './FileDetails';
 
 import { createBrowserHistory } from "history";
 import Catalogue from './Catalogue';
+import MakerList from './MakerList';
 
 const history = createBrowserHistory();
 
-function ModalSwitch() {
+function SwitchHandler() {
 	let location = useLocation();
   
 	let background = location.state && location.state.background;
 
 	return (
-		<div>
 		<Switch location={background || location}>
 			<Route exact path="/" children={<App />} />
 			{/* <Route path="/gallery" children={<Catalogue />} /> */}
-			<Route path="/FileDetails" children={<FileDetails />} />
+			<Route path="/FileDetails" component={FileDetails} />
+			<Route path="/MakerList" component={MakerList} />
 		</Switch>
-
-		{/* Show the modal when a background page is set */}
-		{/* {background && <Route path="/img/:id" children={<Modal />} />} */}
-		</div>
 	);
 }
 
@@ -41,7 +38,7 @@ ReactDOM.render(
             </div>
         </nav>
 	  <BrowserRouter>
-		<ModalSwitch />
+		<SwitchHandler />
 	</BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

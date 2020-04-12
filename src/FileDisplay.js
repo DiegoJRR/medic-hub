@@ -27,9 +27,16 @@ class FileDisplay extends Component {
         return (
             
                 <div className='file-display'>
+                    <Link to={{
+                                    pathname : '/FileDetails',
+                                    state : this.props
+                                }}>
                     <div className='card' onClick={() => {
                             console.log('PTM');
-                            this.setState({redirected : <Redirect push to='/FileDetails'/>});
+                            {/* this.setState({redirected : <Redirect push to={{
+                                    pathname : '/FileDetails',
+                                    state : this.props
+                                }}/>}); */}
                         }}>
                         <div className='card-image'>
                             <figure className='image'>
@@ -40,6 +47,7 @@ class FileDisplay extends Component {
                         <Link to='/FileDetails'>{this.props.itemName}</Link>
                         </div>
                     </div>
+                    </Link>
                 </div>
             
         );
